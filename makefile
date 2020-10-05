@@ -7,7 +7,7 @@ release:
 
 dependencies:
 	sudo apt install -y python3 python3-pip virtualenv tree xsel xclip python-autopep8
-	sudo -H pip3 install pytest sphinx pep8 flake8 pyperclip arrow
+	sudo -H pip3 install pytest sphinx pep8 flake8 arrow
 
 clean:
 	py3clean . && pyclean .

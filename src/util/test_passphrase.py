@@ -1,7 +1,6 @@
 import logging
 import string
 import random
-import pyperclip
 import os
 from slogger import slogger
 
@@ -13,7 +12,6 @@ def passphrase(length: int) -> str:
     alphabet = string.ascii_letters + string.digits + string.punctuation
     product = str(''.join(random.choice(alphabet) for i in range(length)))
     logging.info(" "+product)
-    pyperclip.copy(product)
     return(product)
 
 
