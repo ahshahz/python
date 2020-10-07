@@ -1,17 +1,21 @@
 #!/bin/bash
 SHELL := /bin/bash
 
-release:
-	mkdir -p logs
-	python3 -m pytest -v
+all: requirements_apt run
 
-dependencies:
-	sudo apt install -y python3 python3-pip virtualenv tree xsel xclip python-autopep8
-	sudo -H pip3 install pytest sphinx pep8 flake8 arrow
+run:
+	mkdir -p logs
+	python3.8 -m venv build; \
+	source ./build/bin/activate; \
+	./build/bin/pip install -r requirements_pip.txt; \
+	./build/bin/python -m pytest -v -s; \
+
+requirements_apt:
+	cat requirements_apt.txt | xargs sudo apt install -y;
 
 clean:
-	py3clean . && pyclean .
+	rm -rf build logs
 	find . | grep -E "(__pycache__|\.pyc|\.pyo|logs|\.log)" | xargs rm -rf
 
-python-pep8-formatted:
+pep8:
 	find . -name '*.py' -exec autopep8 --in-place '{}' \;

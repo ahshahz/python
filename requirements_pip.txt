@@ -1,0 +1,7 @@
+arrow
+wheel
+pytest
+sphinx
+flake8
+pep8
+autopep8
