@@ -1,7 +1,7 @@
 arrow
-wheel
-pytest
-sphinx
+autopep8
 flake8
 pep8
-autopep8
+pytest
+sphinx
+wheel

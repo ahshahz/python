@@ -38,4 +38,4 @@ def test_is_same_tree_false():
 
 def test_is_same_tree_fails():
     with pytest.raises(AttributeError):
-        test = is_same_tree(1,1)
+        test = is_same_tree(1, 1)
